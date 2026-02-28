@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEJA STAYS · city stays | Kenya Airbnb</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+    <style>
+        /* page-specific adjustments */
+        .city-hero {
+            height: 40vh;
+            background: linear-gradient(135deg, #0f1a1f 0%, #1a2a33 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .city-hero h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            color: white;
+            text-transform: capitalize;
+            z-index: 2;
+        }
+        .city-hero h1 span {
+            color: #d4b68a;
+            font-weight: 500;
+        }
+        .back-button {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(212, 182, 138, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 182, 138, 0.3);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 400;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+        .back-button:hover {
+            background: rgba(212, 182, 138, 0.4);
+            border-color: #d4b68a;
+        }
+        .photo-gallery {
+            padding: 4rem 2rem;
+            background: #0b1215;
+        }
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .photo-item {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 30px -10px black;
+            transition: transform 0.4s ease;
+            height: 300px;
+        }
+        .photo-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 30px 45px -10px black;
+        }
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .city-booking-bar {
+            text-align: center;
+            padding: 3rem;
+            background: #0f1a1f;
+            border-top: 1px solid rgba(212, 182, 138, 0.2);
+        }
+        .city-booking-bar .cta-button {
+            display: inline-block;
+            text-decoration: none;
+        }
+        .photo-caption {
+            text-align: center;
+            margin-top: 0.5rem;
+            color: #b0c4d9;
+            font-weight: 300;
+        }
+        .property-name {
+            color: #d4b68a;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="city-hero">
+        <a href="index.html" class="back-button">← back to all homes</a>
+        <h1><span id="cityName">Nairobi</span> · <span id="propertyTag">luxury collection</span></h1>
+    </div>
+
+    <section class="photo-gallery">
+        <div class="photo-grid" id="photoGrid">
+            <!-- photos will be injected via JS -->
+        </div>
+    </section>
+
+    <div class="city-booking-bar">
+        <button class="cta-button" id="cityBookBtn">book this KEJA STAYS home →</button>
+    </div>
+
+    <!-- booking modal for city page with Formspree -->
+    <div class="modal-overlay" id="bookingModalCity">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModalCity">&times;</button>
+            <h2 class="modal-title">book with KEJA STAYS</h2>
+            <form id="bookingFormCity" class="booking-form" action="https://formspree.io/f/xdaljjwg" method="POST">
+                <div class="form-row">
+                    <input type="text" name="fullName" id="fullNameCity" placeholder="full name" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="fromTown" id="fromTownCity" placeholder="where from? (city/country)" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="stayCity" id="stayCityCity" placeholder="where in kenya?" required>
+                </div>
+                <div class="form-row">
+                    <select name="bedrooms" id="bedroomsCity" required>
+                        <option value="" disabled selected>bedrooms needed</option>
+                        <option value="1">1 bedroom</option>
+                        <option value="2">2 bedrooms</option>
+                        <option value="3">3 bedrooms</option>
+                        <option value="4">4 bedrooms</option>
+                        <option value="5">5+ bedrooms</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <input type="tel" name="whatsapp" id="whatsappCity" placeholder="whatsapp number (with country code)" required>
+                </div>
+                <div class="form-row">
+                    <button type="submit" class="submit-btn">request to book</button>
+                </div>
+                <p class="form-footnote">📡 wifi included • top security • all cities</p>
+                <p class="form-footnote">✓ we'll contact you soon via WhatsApp or email</p>
+            </form>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <p>© KEJA STAYS · premium bnbs across kenya</p>
+    </footer>
+
+    <script>
+        // get city from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        let city = urlParams.get('city') || 'nairobi';
+        
+        // format city name for display
+        const cityDisplay = city.charAt(0).toUpperCase() + city.slice(1);
+        document.getElementById('cityName').textContent = cityDisplay;
+        document.getElementById('stayCityCity').value = cityDisplay; // prefill in form
+
+        // UNIQUE PHOTO DATABASE for each city
+        const cityPhotos = {
+            nairobi: {
+                tag: "The翡翠 Residence",
+                photos: [
+                    { url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop', caption: 'Grand living room with city views' },
+                    { url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop', caption: 'Chef\'s kitchen · marble countertops' },
+                    { url: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&auto=format&fit=crop', caption: 'Master suite with walk-in closet' },
+                    { url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop', caption: 'Spa-inspired bathroom' },
+                    { url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop', caption: 'Private balcony · Nairobi skyline' },
+                    { url: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop', caption: '24/7 secure concierge' }
+                ]
+            },
+            mombasa: {
+                tag: "Bahari Villa",
+                photos: [
+                    { url: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop', caption: 'Oceanfront living room' },
+                    { url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop', caption: 'Swahili coastal kitchen' },
+                    { url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop', caption: 'Master bedroom with ocean view' },
+                    { url: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&auto=format&fit=crop', caption: 'Outdoor rainfall shower' },
+                    { url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop', caption: 'Private terrace · Indian Ocean' },
+                    { url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop', caption: 'Infinity pool & sundowners' }
+                ]
+            },
+            kisumu: {
+                tag: "Dunga House",
+                photos: [
+                    { url: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&auto=format&fit=crop', caption: 'Lake Victoria facing living' },
+                    { url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop', caption: 'Modern kitchen · lake views' },
+                    { url: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop', caption: 'Sunset bedroom' },
+                    { url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop', caption: 'Contemporary bathroom' },
+                    { url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop', caption: 'Rooftop lounge' },
+                    { url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop', caption: 'Private garden · lakeside' }
+                ]
+            },
+            nakuru: {
+                tag: "The Flamingo Suite",
+                photos: [
+                    { url: 'https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&auto=format&fit=crop', caption: 'Section 58 · modern living area' },
+                    { url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop', caption: 'Gourmet kitchen' },
+                    { url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop', caption: 'Master bedroom with en-suite' },
+                    { url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop', caption: 'Spa bathroom · jacuzzi tub' },
+                    { url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop', caption: 'Mountain view balcony' },
+                    { url: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop', caption: 'Secure gated compound' }
+                ]
+            },
+            eldoret: {
+                tag: "The Highlands Retreat",
+                photos: [
+                    { url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop', caption: 'Kapsoya · plush living room' },
+                    { url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop', caption: 'Country-style kitchen' },
+                    { url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop', caption: 'Master bedroom' },
+                    { url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop', caption: 'Modern bathroom' },
+                    { url: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&auto=format&fit=crop', caption: 'Home office · high speed wifi' },
+                    { url: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop', caption: 'Private patio · gardens' }
+                ]
+            },
+            malindi: {
+                tag: "Jua Cottage",
+                photos: [
+                    { url: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop', caption: 'Watamu · open plan living' },
+                    { url: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=800&auto=format&fit=crop', caption: 'Beachfront kitchen' },
+                    { url: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop', caption: 'Coastal bedroom' },
+                    { url: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop', caption: 'Outdoor shower' },
+                    { url: 'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop', caption: 'Poolside lounge' },
+                    { url: 'https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&auto=format&fit=crop', caption: 'Tropical garden' }
+                ]
+            }
+        };
+
+        // use selected city or default to nairobi
+        const cityData = cityPhotos[city] || cityPhotos.nairobi;
+        document.getElementById('propertyTag').textContent = cityData.tag;
+
+        // populate photo grid
+        const grid = document.getElementById('photoGrid');
+        cityData.photos.forEach(photo => {
+            const item = document.createElement('div');
+            item.className = 'photo-item';
+            item.innerHTML = `<img src="${photo.url}" alt="${photo.caption}" loading="lazy"><div class="photo-caption">${photo.caption}</div>`;
+            grid.appendChild(item);
+        });
+
+        // modal logic for city page
+        const modal = document.getElementById('bookingModalCity');
+        const openBtn = document.getElementById('cityBookBtn');
+        const closeBtn = document.getElementById('closeModalCity');
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // form submission with Formspree
+        const form = document.getElementById('bookingFormCity');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'sending...';
+            submitBtn.disabled = true;
+
+            try {
+                // Send to Formspree
+                const response = await fetch('https://formspree.io/f/xdaljjwg', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    alert(`Thank you ${data.fullName} for choosing KEJA STAYS!\n\nWe've received your booking request for ${data.stayCity}.\n\nOur team will contact you shortly via WhatsApp (${data.whatsapp}) or email to confirm your stay and curate the perfect experience for you.\n\nAsante sana! 🇰🇪`);
+                    
+                    modal.classList.remove('active');
+                    form.reset();
+                } else {
+                    alert('Something went wrong. Please try again or contact us directly.');
+                }
+            } catch (error) {
+                alert('Network error. Please check your connection and try again.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KEJA STAYS · Kenya Airbnb collection</title>
+    <!-- separate CSS file (linked) + inline 3D polish -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- google fonts for that classy touch -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+    <!-- tiny 3d library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- 3d background canvas -->
+    <div class="hero-3d-wrap">
+        <canvas id="bgCanvas"></canvas>
+        <div class="hero-content">
+            <h1 class="hero-title">KEJA STAYS</h1>
+            <p class="hero-sub">curated apartments · all cities in kenya</p>
+            <div class="hero-buttons">
+                <button class="cta-button" id="openBookingBtn">book your stay →</button>
+                <button class="cta-button secondary" id="viewRoomsBtn">view rooms ↓</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- classy gallery with 3d hover effect -->
+    <section class="gallery-section" id="gallery-section">
+        <h2 class="section-title">our homes across kenya</h2>
+        <div class="gallery-grid">
+            <!-- nairobi card - unique apartment -->
+            <div class="gallery-card" data-city="nairobi" data-page="nairobi">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop" alt="Nairobi luxury apartment" loading="lazy">
+                    <div class="card-caption">
+                        <h3>nairobi · kilimani</h3>
+                        <p>The翡翠 Residence • smart wifi • 24/7 security</p>
+                        <span class="view-indicator">click to view all photos →</span>
+                    </div>
+                </div>
+            </div>
+            <!-- mombasa card - unique beach apartment -->
+            <div class="gallery-card" data-city="mombasa" data-page="mombasa">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop" alt="Mombasa oceanfront" loading="lazy">
+                    <div class="card-caption">
+                        <h3>mombasa · nyali</h3>
+                        <p>Bahari Villa • ocean view • modern kitchen</p>
+                        <span class="view-indicator">click to view all photos →</span>
+                    </div>
+                </div>
+            </div>
+            <!-- kisumu card - unique lakeside -->
+            <div class="gallery-card" data-city="kisumu" data-page="kisumu">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&auto=format&fit=crop" alt="Kisumu lakeside home" loading="lazy">
+                    <div class="card-caption">
+                        <h3>kisumu · milimani</h3>
+                        <p>Dunga House • lake breeze • minimalist</p>
+                        <span class="view-indicator">click to view all photos →</span>
+                    </div>
+                </div>
+            </div>
+            <!-- nakuru card - unique photo -->
+            <div class="gallery-card" data-city="nakuru" data-page="nakuru">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&auto=format&fit=crop" alt="Nakuru modern townhouse" loading="lazy">
+                    <div class="card-caption">
+                        <h3>nakuru · section 58</h3>
+                        <p>The Flamingo Suite • spa bathroom • high speed wifi</p>
+                        <span class="view-indicator">click to view all photos →</span>
+                    </div>
+                </div>
+            </div>
+            <!-- eldoret card - unique highlands home -->
+            <div class="gallery-card" data-city="eldoret" data-page="eldoret">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop" alt="Eldoret countryside home" loading="lazy">
+                    <div class="card-caption">
+                        <h3>eldoret · kapsoya</h3>
+                        <p>The Highlands Retreat • plush living • smart security</p>
+                        <span class="view-indicator">click to view all photos →</span>
+                    </div>
+                </div>
+            </div>
+            <!-- malindi card - unique coastal villa -->
+            <div class="gallery-card" data-city="malindi" data-page="malindi">
+                <div class="card-inner">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop" alt="Malindi coastal villa" loading="lazy">
+                    <div class="card-caption">
+                        <h3>malindi · watamu</h3>
+                        <p>Jua Cottage • open kitchen • wifi & backup</p>
+                        <span class="view-indicator">click to view all photos →</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- floating booking modal with WhatsApp field and Formspree -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-container">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <h2 class="modal-title">book with KEJA STAYS</h2>
+            <form id="bookingForm" class="booking-form" action="https://formspree.io/f/xdaljjwg" method="POST">
+                <div class="form-row">
+                    <input type="text" name="fullName" id="fullName" placeholder="full name" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="fromTown" id="fromTown" placeholder="where from? (city/country)" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="stayCity" id="stayCity" placeholder="where in kenya? (e.g. nairobi, mombasa...)" required>
+                </div>
+                <div class="form-row">
+                    <select name="bedrooms" id="bedrooms" required>
+                        <option value="" disabled selected>bedrooms needed</option>
+                        <option value="1">1 bedroom</option>
+                        <option value="2">2 bedrooms</option>
+                        <option value="3">3 bedrooms</option>
+                        <option value="4">4 bedrooms</option>
+                        <option value="5">5+ bedrooms</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <input type="tel" name="whatsapp" id="whatsapp" placeholder="whatsapp number (with country code)" required>
+                </div>
+                <div class="form-row">
+                    <button type="submit" class="submit-btn">request to book</button>
+                </div>
+                <p class="form-footnote">📡 wifi included • top security • all cities</p>
+                <p class="form-footnote">✓ we'll contact you soon via WhatsApp or email</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- small footer note -->
+    <footer class="site-footer">
+        <p>© KEJA STAYS · bnbs in nairobi, mombasa, kisumu, nakuru, eldoret, malindi & beyond</p>
+    </footer>
+
+    <script>
+        // three.js subtle 3d grid + floating particles
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bgCanvas'), alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+
+        // subtle floating particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 600;
+        const posArray = new Float32Array(particlesCount * 3);
+        for(let i = 0; i < particlesCount * 3; i += 3) {
+            posArray[i] = (Math.random() - 0.5) * 20;
+            posArray[i+1] = (Math.random() - 0.5) * 20;
+            posArray[i+2] = (Math.random() - 0.5) * 20;
+        }
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const particlesMaterial = new THREE.PointsMaterial({ size: 0.03, color: 0xffffff, transparent: true, opacity: 0.5 });
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+
+        // wireframe cubes for depth
+        const cubeGeo = new THREE.BoxGeometry(2, 2, 2);
+        const cubeMat = new THREE.MeshStandardMaterial({ color: 0x3a5f6d, wireframe: true, transparent: true, opacity: 0.2 });
+        const cube = new THREE.Mesh(cubeGeo, cubeMat);
+        scene.add(cube);
+
+        const cube2Geo = new THREE.BoxGeometry(3, 3, 3);
+        const cube2Mat = new THREE.MeshStandardMaterial({ color: 0xbfa37e, wireframe: true, transparent: true, opacity: 0.15 });
+        const cube2 = new THREE.Mesh(cube2Geo, cube2Mat);
+        cube2.position.x = 1.5;
+        cube2.position.y = -0.5;
+        scene.add(cube2);
+
+        const ambientLight = new THREE.AmbientLight(0x404060);
+        scene.add(ambientLight);
+        const pointLight = new THREE.PointLight(0xffffff, 0.8);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        camera.position.z = 6;
+        camera.position.y = 1;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            particlesMesh.rotation.y += 0.0002;
+            particlesMesh.rotation.x += 0.0001;
+            cube.rotation.x += 0.001;
+            cube.rotation.y += 0.002;
+            cube2.rotation.y += 0.001;
+            cube2.rotation.z += 0.001;
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // modal logic
+        const modal = document.getElementById('bookingModal');
+        const openBtn = document.getElementById('openBookingBtn');
+        const closeBtn = document.getElementById('closeModal');
+
+        openBtn.addEventListener('click', () => {
+            modal.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // scroll to gallery when "view rooms" clicked
+        document.getElementById('viewRoomsBtn').addEventListener('click', () => {
+            document.getElementById('gallery-section').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // form submission with Formspree
+        const form = document.getElementById('bookingForm');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Show loading state
+            const submitBtn = form.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'sending...';
+            submitBtn.disabled = true;
+
+            try {
+                // Send to Formspree
+                const response = await fetch('https://formspree.io/f/xdaljjwg', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    // Show KEJA STAYS branded success message
+                    alert(`Thank you ${data.fullName} for choosing KEJA STAYS!\n\nWe've received your booking request for ${data.stayCity}.\n\nOur team will contact you shortly via WhatsApp (${data.whatsapp}) or email to confirm your stay and curate the perfect experience for you.\n\nAsante sana! 🇰🇪`);
+                    
+                    modal.classList.remove('active');
+                    form.reset();
+                } else {
+                    alert('Something went wrong. Please try again or contact us directly.');
+                }
+            } catch (error) {
+                alert('Network error. Please check your connection and try again.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+        // redirect to city detail page when card clicked
+        const cards = document.querySelectorAll('.gallery-card');
+        cards.forEach(card => {
+            card.addEventListener('click', (e) => {
+                const cityPage = card.getAttribute('data-page');
+                if (cityPage) {
+                    window.location.href = `city.html?city=${cityPage}`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
