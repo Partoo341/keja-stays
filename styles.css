@@ -54,21 +54,11 @@ body {
 
 .hero-title {
     font-size: clamp(3rem, 12vw, 6rem);
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1;
     margin-bottom: 0.5rem;
-}
-
-.hero-title .thin {
-    font-weight: 200;
     color: #ffffff;
-}
-
-.hero-title .bold {
-    font-weight: 600;
-    color: #d4b68a;
-    margin-left: 0.2rem;
 }
 
 .hero-sub {
@@ -137,7 +127,7 @@ body {
     margin-right: auto;
 }
 
-/* ---------- gallery section ---------- */
+/* ---------- gallery section - with ALWAYS VISIBLE city names (FIXED) ---------- */
 .gallery-section {
     width: 100%;
     padding: 5rem 2rem;
@@ -191,46 +181,89 @@ body {
     transform: scale(1.1);
 }
 
+/* FIXED: Card caption - ALWAYS VISIBLE with solid background */
 .card-caption {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.95) 10%, transparent);
+    background: linear-gradient(to top, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.9) 30%, rgba(0,0,0,0.7) 70%, transparent);
     color: white;
     padding: 2rem 1.5rem 1.5rem 1.5rem;
-    transform: translateY(40%);
-    opacity: 0;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+    transition: all 0.4s ease;
+    /* Ensure text is always readable */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-.gallery-card:hover .card-caption {
-    transform: translateY(0);
+/* City name - LARGE AND BOLD */
+.card-caption h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #d4b68a; /* Brass color */
+    text-transform: capitalize;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.9);
+    letter-spacing: 0.5px;
+}
+
+/* Property name - always visible */
+.property-tag {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    display: block;
+}
+
+/* Amenities - always visible too! */
+.card-caption p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #e2e8f0;
+    letter-spacing: 0.02em;
+    margin: 0.5rem 0;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    opacity: 1;
+    display: block;
+}
+
+/* View indicator - always visible */
+.view-indicator {
+    font-size: 0.9rem;
+    color: #d4b68a;
+    font-weight: 500;
+    display: inline-block;
+    border-bottom: 2px solid #d4b68a;
+    margin-top: 0.5rem;
+    padding-bottom: 2px;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+/* Remove hover-only behavior */
+.hover-content {
+    display: block;
+    max-height: none;
     opacity: 1;
 }
 
-.card-caption h3 {
-    font-size: 1.5rem;
-    font-weight: 500;
-    margin-bottom: 0.3rem;
-    color: #d4b68a;
-    text-transform: capitalize;
-}
-
-.card-caption p {
-    font-size: 0.95rem;
-    font-weight: 300;
-    color: #e2e8f0;
-    letter-spacing: 0.02em;
-    margin-bottom: 0.5rem;
-}
-
-.view-indicator {
-    font-size: 0.8rem;
-    color: #d4b68a;
-    opacity: 0.8;
-    display: inline-block;
-    border-bottom: 1px dotted #d4b68a;
+/* Mobile adjustment */
+@media (max-width: 600px) {
+    .card-caption {
+        padding: 1.5rem 1rem 1rem 1rem;
+    }
+    
+    .card-caption h3 {
+        font-size: 1.5rem;
+    }
+    
+    .property-tag {
+        font-size: 1rem;
+    }
+    
+    .card-caption p {
+        font-size: 0.9rem;
+    }
 }
 
 /* ---------- booking modal – with fixed select visibility ---------- */
