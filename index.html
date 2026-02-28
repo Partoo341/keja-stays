@@ -169,6 +169,64 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
+  <!-- Language Selector - FIXED WORKING VERSION -->
+<div class="language-selector" id="languageSelector">
+    <button class="lang-btn" id="langBtn">
+        <span class="lang-icon">🌐</span>
+        <span class="lang-text">Language</span>
+        <span class="lang-arrow">▼</span>
+    </button>
+    <div class="lang-dropdown" id="langDropdown">
+        <a href="#" data-lang="en" class="lang-option active">
+            <span class="flag">🇬🇧</span>
+            <span class="lang-name">English</span>
+        </a>
+        <a href="#" data-lang="fr" class="lang-option">
+            <span class="flag">🇫🇷</span>
+            <span class="lang-name">Français</span>
+        </a>
+        <a href="#" data-lang="es" class="lang-option">
+            <span class="flag">🇪🇸</span>
+            <span class="lang-name">Español</span>
+        </a>
+        <a href="#" data-lang="de" class="lang-option">
+            <span class="flag">🇩🇪</span>
+            <span class="lang-name">Deutsch</span>
+        </a>
+        <a href="#" data-lang="it" class="lang-option">
+            <span class="flag">🇮🇹</span>
+            <span class="lang-name">Italiano</span>
+        </a>
+        <a href="#" data-lang="pt" class="lang-option">
+            <span class="flag">🇵🇹</span>
+            <span class="lang-name">Português</span>
+        </a>
+        <a href="#" data-lang="nl" class="lang-option">
+            <span class="flag">🇳🇱</span>
+            <span class="lang-name">Nederlands</span>
+        </a>
+        <a href="#" data-lang="ru" class="lang-option">
+            <span class="flag">🇷🇺</span>
+            <span class="lang-name">Русский</span>
+        </a>
+        <a href="#" data-lang="ar" class="lang-option">
+            <span class="flag">🇸🇦</span>
+            <span class="lang-name">العربية</span>
+        </a>
+        <a href="#" data-lang="zh" class="lang-option">
+            <span class="flag">🇨🇳</span>
+            <span class="lang-name">中文</span>
+        </a>
+        <a href="#" data-lang="ja" class="lang-option">
+            <span class="flag">🇯🇵</span>
+            <span class="lang-name">日本語</span>
+        </a>
+        <a href="#" data-lang="ko" class="lang-option">
+            <span class="flag">🇰🇷</span>
+            <span class="lang-name">한국어</span>
+        </a>
+    </div>
+</div>
     <!-- 3d background canvas -->
     <div class="hero-3d-wrap">
         <canvas id="bgCanvas"></canvas>
@@ -299,6 +357,55 @@
             </div>
         </div>
     </section>
+   <!-- Add to index.html after gallery section - CORRECTED STRUCTURE -->
+<section class="blog-section">
+    <h2 class="section-title">kenya travel guides</h2>
+    <div class="blog-grid">
+        <!-- Blog Post 1 -->
+        <div class="blog-card" onclick="window.location.href='blog-kenya-guide.html'">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop" alt="Kenya travel guide">
+            <div class="blog-content">
+                <div class="blog-date">February 2026 · 15 min read</div>
+                <h3 class="blog-title">Ultimate Kenya Travel Guide 2026: Where to Stay</h3>
+                <p class="blog-excerpt">Complete guide to Kenya travel. Best neighborhoods, luxury vs budget stays, safari vs beach combinations...</p>
+                <span class="read-more">Read more →</span>
+            </div>
+        </div>
+        
+        <!-- Blog Post 2 -->
+        <div class="blog-card" onclick="window.location.href='blog-nomad-guide.html'">
+            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&h=400&fit=crop" alt="Digital nomad Nairobi">
+            <div class="blog-content">
+                <div class="blog-date">February 2026 · 10 min read</div>
+                <h3 class="blog-title">Digital Nomad Guide to Nairobi: Best BnBs with Fast WiFi</h3>
+                <p class="blog-excerpt">Best neighborhoods for remote work, WiFi speeds, monthly rentals, and coworking spaces...</p>
+                <span class="read-more">Read more →</span>
+            </div>
+        </div>
+        
+        <!-- Blog Post 3 -->
+        <div class="blog-card" onclick="window.location.href='blog-safari-beach.html'">
+            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&h=400&fit=crop" alt="Safari and beach Kenya">
+            <div class="blog-content">
+                <div class="blog-date">February 2026 · 12 min read</div>
+                <h3 class="blog-title">Luxury Safari vs Beach: The Perfect 12-Day Itinerary</h3>
+                <p class="blog-excerpt">How to combine luxury safari and beach experiences in Kenya with private villas and exclusive game drives...</p>
+                <span class="read-more">Read more →</span>
+            </div>
+        </div>
+        
+        <!-- Blog Post 4 -->
+        <div class="blog-card" onclick="window.location.href='blog-cost-guide.html'">
+            <img src="https://images.unsplash.com/photo-1578911373434-0cb395d2cbfb?w=600&h=400&fit=crop" alt="Kenya travel costs">
+            <div class="blog-content">
+                <div class="blog-date">February 2026 · 8 min read</div>
+                <h3 class="blog-title">Kenya Travel Cost 2026: Complete Budget Guide</h3>
+                <p class="blog-excerpt">Detailed Kenya travel costs: accommodation, food, transport, safaris. Plan your perfect budget...</p>
+                <span class="read-more">Read more →</span>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Global Testimonials Section -->
     <section class="testimonials-section">
@@ -493,5 +600,192 @@
         // REMOVED: the old card click handler since we now use inline onclick
         // The cards already have onclick attributes
     </script>
+    <!-- Add just before closing </body> tag -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'fr,de,es,it',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>
+// Language Selector Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const langBtn = document.getElementById('langBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    
+    langBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        langDropdown.classList.toggle('show');
+    });
+    
+    document.addEventListener('click', function() {
+        langDropdown.classList.remove('show');
+    });
+    
+    langDropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+});
+
+// Google Translate Function - COMPLETELY FREE
+function changeLanguage(lang) {
+    // Store selected language
+    localStorage.setItem('selectedLanguage', lang);
+    
+    // Update button text
+    const langNames = {
+        'en': '🇬🇧 English',
+        'fr': '🇫🇷 Français',
+        'es': '🇪🇸 Español',
+        'de': '🇩🇪 Deutsch',
+        'it': '🇮🇹 Italiano',
+        'pt': '🇵🇹 Português',
+        'nl': '🇳🇱 Nederlands',
+        'ru': '🇷🇺 Русский',
+        'ar': '🇸🇦 العربية',
+        'zh': '🇨🇳 中文',
+        'ja': '🇯🇵 日本語',
+        'ko': '🇰🇷 한국어'
+    };
+    
+    document.getElementById('langBtn').innerHTML = `${langNames[lang] || '🌐 English'} ▼`;
+    
+    // Use Google Translate (completely free)
+    if (lang === 'en') {
+        // Reset to original
+        window.location.reload();
+    } else {
+        // Redirect to Google Translate version
+        window.location.href = `https://translate.google.com/translate?hl=${lang}&sl=en&tl=${lang}&u=${window.location.href}`;
+    }
+}
+<script>
+// Language Selector - FIXED WORKING VERSION
+document.addEventListener('DOMContentLoaded', function() {
+    const langBtn = document.getElementById('langBtn');
+    const langDropdown = document.getElementById('langDropdown');
+    const langOptions = document.querySelectorAll('.lang-option');
+    const langText = document.querySelector('.lang-text');
+    
+    // Check if elements exist
+    if (!langBtn || !langDropdown) return;
+    
+    // Toggle dropdown on button click
+    langBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Toggle classes
+        this.classList.toggle('active');
+        langDropdown.classList.toggle('show');
+        
+        // Animate dropdown items
+        if (langDropdown.classList.contains('show')) {
+            langOptions.forEach((option, index) => {
+                option.style.setProperty('--item-index', index);
+            });
+        }
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+            langBtn.classList.remove('active');
+            langDropdown.classList.remove('show');
+        }
+    });
+    
+    // Prevent dropdown from closing when clicking inside it
+    langDropdown.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+    
+    // Handle language selection
+    langOptions.forEach(option => {
+        option.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const selectedLang = this.getAttribute('data-lang');
+            const selectedFlag = this.querySelector('.flag').textContent;
+            const selectedName = this.querySelector('.lang-name').textContent;
+            
+            // Update button text
+            langText.textContent = selectedName;
+            
+            // Update active state
+            langOptions.forEach(opt => opt.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Close dropdown
+            langBtn.classList.remove('active');
+            langDropdown.classList.remove('show');
+            
+            // Save preference
+            localStorage.setItem('preferredLanguage', selectedLang);
+            
+            // Trigger translation
+            translatePage(selectedLang);
+        });
+    });
+    
+    // Check for saved language preference
+    const savedLang = localStorage.getItem('preferredLanguage');
+    if (savedLang && savedLang !== 'en') {
+        // Find and activate the saved language option
+        const savedOption = document.querySelector(`.lang-option[data-lang="${savedLang}"]`);
+        if (savedOption) {
+            const flag = savedOption.querySelector('.flag').textContent;
+            const name = savedOption.querySelector('.lang-name').textContent;
+            langText.textContent = name;
+            savedOption.classList.add('active');
+            
+            // Ask user if they want to translate (only once per session)
+            if (!sessionStorage.getItem('translationPromptShown')) {
+                setTimeout(() => {
+                    if (confirm(`🌐 Would you like to view this page in ${name}?`)) {
+                        translatePage(savedLang);
+                    }
+                }, 1500);
+                sessionStorage.setItem('translationPromptShown', 'true');
+            }
+        }
+    }
+});
+
+// Translation function using Google Translate
+function translatePage(targetLang) {
+    if (targetLang === 'en') {
+        // Reset to original language
+        window.location.reload();
+        return;
+    }
+    
+    // Get current page URL
+    const currentUrl = window.location.href.split('#')[0].split('?')[0];
+    
+    // Create Google Translate URL
+    const translateUrl = `https://translate.google.com/translate?hl=${targetLang}&sl=en&tl=${targetLang}&u=${encodeURIComponent(currentUrl)}&sandbox=1`;
+    
+    // Open in new tab (avoids navigation issues)
+    window.open(translateUrl, '_blank');
+}
+
+// Optional: Add keyboard support (Escape key to close dropdown)
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        if (langBtn && langDropdown.classList.contains('show')) {
+            langBtn.classList.remove('active');
+            langDropdown.classList.remove('show');
+        }
+    }
+});
+</script>
 </body>
 </html>
