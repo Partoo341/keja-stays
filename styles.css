@@ -855,3 +855,28 @@ body {
 .lang-option[data-lang="ar"] {
     direction: rtl;
 }
+/* Floating WhatsApp */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;   /* change to right: 25px; if you want right side */
+    width: 70px;
+    height: 70px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    z-index: 9999;
+    transition: transform 0.3s ease;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-icon svg {
+    width: 38px;
+    height: 38px;
+}
