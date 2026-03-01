@@ -6,14 +6,12 @@
     <title>Ultimate Kenya Travel Guide 2026: Best Places to Stay | KEJA STAYS</title>
     <meta name="description" content="Complete guide to Kenya travel 2026. Best neighborhoods, luxury vs budget stays, safari vs beach combinations, and insider tips from local experts.">
     
-    <!-- Same meta tags as main site -->
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
     
     <style>
-        /* Blog post specific styles */
         .blog-post-container {
             max-width: 900px;
             margin: 4rem auto;
@@ -84,6 +82,34 @@
             line-height: 1.7;
         }
         
+        .blog-post-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .blog-post-content th {
+            background: rgba(212, 182, 138, 0.1);
+            color: #d4b68a;
+            font-weight: 500;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(212, 182, 138, 0.3);
+        }
+        
+        .blog-post-content td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+        }
+        
+        .blog-post-content tr:last-child td {
+            border-bottom: none;
+        }
+        
         .cta-box {
             background: linear-gradient(135deg, rgba(212, 182, 138, 0.1) 0%, rgba(212, 182, 138, 0.05) 100%);
             border: 1px solid rgba(212, 182, 138, 0.3);
@@ -97,6 +123,11 @@
             color: #d4b68a;
             font-size: 1.8rem;
             margin-bottom: 1rem;
+        }
+        
+        .cta-box p {
+            color: #e2e8f0;
+            margin-bottom: 2rem;
         }
         
         .back-to-blog {
@@ -125,7 +156,33 @@
     </style>
 </head>
 <body>
-    <!-- Simple navigation back to home -->
+    <!-- Language Selector -->
+    <div class="language-selector" id="languageSelector">
+        <button class="lang-btn" id="langBtn">
+            <span class="lang-icon">🌐</span>
+            <span class="lang-text">English</span>
+            <span class="lang-arrow">▼</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+            <a href="#" data-lang="en" class="lang-option active"><span class="flag">🇬🇧</span><span class="lang-name">English</span></a>
+            <a href="#" data-lang="fr" class="lang-option"><span class="flag">🇫🇷</span><span class="lang-name">Français</span></a>
+            <a href="#" data-lang="es" class="lang-option"><span class="flag">🇪🇸</span><span class="lang-name">Español</span></a>
+            <a href="#" data-lang="de" class="lang-option"><span class="flag">🇩🇪</span><span class="lang-name">Deutsch</span></a>
+            <a href="#" data-lang="it" class="lang-option"><span class="flag">🇮🇹</span><span class="lang-name">Italiano</span></a>
+            <a href="#" data-lang="pt" class="lang-option"><span class="flag">🇵🇹</span><span class="lang-name">Português</span></a>
+            <a href="#" data-lang="nl" class="lang-option"><span class="flag">🇳🇱</span><span class="lang-name">Nederlands</span></a>
+            <a href="#" data-lang="ru" class="lang-option"><span class="flag">🇷🇺</span><span class="lang-name">Русский</span></a>
+            <a href="#" data-lang="ar" class="lang-option"><span class="flag">🇸🇦</span><span class="lang-name">العربية</span></a>
+            <a href="#" data-lang="zh" class="lang-option"><span class="flag">🇨🇳</span><span class="lang-name">中文</span></a>
+            <a href="#" data-lang="ja" class="lang-option"><span class="flag">🇯🇵</span><span class="lang-name">日本語</span></a>
+            <a href="#" data-lang="ko" class="lang-option"><span class="flag">🇰🇷</span><span class="lang-name">한국어</span></a>
+        </div>
+    </div>
+
+    <!-- Google Translate Widget (hidden) -->
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <!-- Navigation -->
     <div style="padding: 2rem; text-align: center;">
         <a href="index.html" class="back-to-blog">← Back to KEJA STAYS</a>
     </div>
@@ -137,7 +194,7 @@
                 <h1>Ultimate Kenya Travel Guide 2026: Where to Stay</h1>
             </div>
             
-            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&auto=format&fit=crop" alt="Kenya travel guide" class="blog-post-image">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200&auto=format&fit=crop" alt="Luxury living room at KEJA STAYS Nairobi" class="blog-post-image">
             
             <h2>Why Kenya in 2026?</h2>
             <p>Kenya continues to cement its position as Africa's premier travel destination. With new direct flights from major US and European cities, enhanced infrastructure, and world-class hospitality, 2026 is the perfect year to explore the country. Visitors to Kenya spend an average of $140 per day, with accommodation ranging from budget-friendly $33 per night to luxury stays at $300+.</p>
@@ -145,37 +202,26 @@
             <h2>Best Neighborhoods for Every Traveler</h2>
             
             <h3>Nairobi: Kilimani & Westlands</h3>
-            <p>For business travelers and digital nomads, Kilimani and Westlands offer the perfect blend of convenience and comfort. Our <strong>The翡翠 Residence in Kilimani</strong> provides fiber internet (40+ Mbps), dedicated workspaces, and 24/7 security. Westlands, home to major corporate offices and embassies, is ideal for professionals attending conferences.</p>
+            <p>For business travelers and digital nomads, Kilimani and Westlands offer the perfect blend of convenience and comfort. Our <strong>The翡翠 Residence in Kilimani</strong> provides Starlink internet (50-200 Mbps), dedicated workspaces, and 24/7 security. Westlands, home to major corporate offices and embassies, is ideal for professionals attending conferences.</p>
             
             <h3>Mombasa: Nyali Beachfront</h3>
-            <p><strong>Bahari Villa in Nyali</strong> offers direct ocean access and modern amenities. The area is perfect for beach lovers and families, with calm waters and proximity to Mombasa's historic old town.</p>
+            <p><strong>Bahari Villa in Nyali</strong> offers direct ocean access and modern amenities. The area is perfect for beach lovers and families, with calm waters and proximity to Mombasa's historic old town. Watch dolphins from your private terrace.</p>
             
             <h3>Kisumu: Milimani Lakeside</h3>
-            <p><strong>Dunga House</strong> provides stunning Lake Victoria views and a peaceful retreat for travelers seeking authentic lakeside experiences.</p>
+            <p><strong>Dunga House</strong> provides stunning Lake Victoria views and a peaceful retreat for travelers seeking authentic lakeside experiences. Enjoy spectacular sunsets over Africa's largest lake.</p>
+            
+            <h3>Nakuru: Section 58</h3>
+            <p><strong>The Flamingo Suite</strong> serves as the perfect base for safari adventures. Located near Lake Nakuru National Park, home to thousands of flamingos and rhinos.</p>
             
             <h2>Safari vs Beach: Can You Have Both?</h2>
-            <p>Absolutely! A 12-day itinerary combining safari and beach is the ultimate Kenya experience. Start with 5-6 days in the Masai Mara for wildlife viewing (budget safari packages start at KSh40,000 for 3 days), then head to the coast for relaxation. Our properties in Nakuru (<strong>The Flamingo Suite</strong>) serve as perfect safari bases, while Bahari Villa in Mombasa offers beachfront luxury.</p>
-            
-            <h2>Kenya Travel Costs 2026</h2>
-            <ul>
-                <li><strong>Budget traveler:</strong> $59/day (hostels, public transport, local eateries)</li>
-                <li><strong>Mid-range traveler:</strong> $140/day (Airbnbs, restaurants, activities)</li>
-                <li><strong>Luxury traveler:</strong> $300+/day (private villas, gourmet dining, private safaris)</li>
-            </ul>
-            
-            <h2>Digital Nomad Guide</h2>
-            <p>Nairobi has emerged as East Africa's digital nomad hub. Key requirements for nomads:</p>
-            <ul>
-                <li><strong>High-speed WiFi:</strong> All KEJA STAYS properties feature Starlink internet (50-200 Mbps)</li>
-                <li><strong>Workspace:</strong> Dedicated desks and ergonomic chairs</li>
-                <li><strong>Power backup:</strong> Inverters for uninterrupted work</li>
-                <li><strong>Monthly discounts:</strong> 15-40% off for extended stays</li>
-            </ul>
+            <p>Absolutely! A 12-day itinerary combining safari and beach is the ultimate Kenya experience. Start with 5-6 days in the Masai Mara for wildlife viewing, then head to the coast for relaxation. Our properties in Nakuru serve as perfect safari bases, while Bahari Villa in Mombasa offers beachfront luxury.</p>
             
             <h2>When to Visit</h2>
-            <p><strong>Peak season (July-October, December-February):</strong> Best wildlife viewing, higher prices</p>
-            <p><strong>Shoulder seasons (January-March):</strong> Great deals, good weather, lower safari prices</p>
-            <p><strong>Green season (April-June, November):</strong> Lowest prices, lush landscapes, fewer tourists</p>
+            <ul>
+                <li><strong>Peak season (July-October):</strong> Best wildlife viewing, higher prices</li>
+                <li><strong>Shoulder seasons (January-March):</strong> Great deals, good weather</li>
+                <li><strong>Green season (April-June):</strong> Lowest prices, lush landscapes</li>
+            </ul>
             
             <div class="cta-box">
                 <h3>Ready to Experience Kenya?</h3>
@@ -185,11 +231,80 @@
         </article>
     </div>
     
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-content">
             <p>© <span class="keja-gold">KEJA</span> STAYS · kenya's most awarded luxury bnbs</p>
         </div>
     </footer>
+
+    <!-- Language Selector JavaScript -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,fr,es,de,it,pt,nl,ru,ar,zh-CN,ja,ko',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        const langMap = {
+            'en': 'en', 'fr': 'fr', 'es': 'es', 'de': 'de', 'it': 'it',
+            'pt': 'pt', 'nl': 'nl', 'ru': 'ru', 'ar': 'ar', 'zh': 'zh-CN',
+            'ja': 'ja', 'ko': 'ko'
+        };
+
+        const langNames = {
+            'en': 'English', 'fr': 'Français', 'es': 'Español', 'de': 'Deutsch',
+            'it': 'Italiano', 'pt': 'Português', 'nl': 'Nederlands', 'ru': 'Русский',
+            'ar': 'العربية', 'zh': '中文', 'ja': '日本語', 'ko': '한국어'
+        };
+
+        function triggerTranslate(lang) {
+            if (lang === 'en') { location.reload(); return; }
+            document.cookie = `googtrans=/en/${langMap[lang]}`;
+            document.cookie = `googtrans=/en/${langMap[lang]}; path=/`;
+            setTimeout(() => location.reload(), 500);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const langBtn = document.getElementById('langBtn');
+            const langDropdown = document.getElementById('langDropdown');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const langText = document.querySelector('.lang-text');
+            
+            if (!langBtn || !langDropdown) return;
+            
+            langBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.classList.toggle('active');
+                langDropdown.classList.toggle('show');
+            });
+            
+            document.addEventListener('click', function(e) {
+                if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                    langBtn.classList.remove('active');
+                    langDropdown.classList.remove('show');
+                }
+            });
+            
+            langOptions.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const selectedLang = this.getAttribute('data-lang');
+                    const selectedName = this.querySelector('.lang-name').textContent;
+                    langText.textContent = selectedName;
+                    langOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    langBtn.classList.remove('active');
+                    langDropdown.classList.remove('show');
+                    localStorage.setItem('preferredLanguage', selectedLang);
+                    triggerTranslate(selectedLang);
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 </body>
 </html>

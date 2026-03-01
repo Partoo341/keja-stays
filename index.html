@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Title Tag - KEJA in gold color via CSS class -->
+    <!-- Title Tag - KEJA in gold color -->
     <title>KEJA STAYS · Kenya's Best Luxury Airbnbs & Vacation Rentals | Top Rated BnB 2026</title>
     
     <!-- Meta Description - Compelling for International Travelers -->
@@ -39,10 +39,10 @@
     <meta name="twitter:description" content="Top rated luxury vacation rentals in Kenya. Book your dream stay today.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200">
     
-    <!-- Canonical URL - Prevent Duplicate Content -->
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://kejastays.co.ke/">
     
-    <!-- Alternate Language Versions (will add more later) -->
+    <!-- Alternate Language Versions -->
     <link rel="alternate" href="https://kejastays.co.ke/" hreflang="x-default">
     <link rel="alternate" href="https://kejastays.co.ke/" hreflang="en">
     
@@ -56,8 +56,7 @@
       "brand": {
         "@type": "Brand",
         "name": "KEJA STAYS",
-        "slogan": "Kenya's Finest Luxury Stays",
-        "logo": "https://kejastays.co.ke/logo.png"
+        "slogan": "Kenya's Finest Luxury Stays"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -73,66 +72,13 @@
         "lowPrice": "89",
         "highPrice": "450"
       },
-      "review": [
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Sarah J. from London"
-          },
-          "datePublished": "2026-02-15",
-          "reviewBody": "Best Airbnb experience in Africa! The翡翠 Residence exceeded all expectations.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
-        },
-        {
-          "@type": "Review",
-          "author": {
-            "@type": "Person",
-            "name": "Michael Chen from Singapore"
-          },
-          "datePublished": "2026-02-10",
-          "reviewBody": "World-class amenities in the heart of Nairobi. Perfect for digital nomads.",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5"
-          }
-        }
-      ],
-      "award": [
-        "Best Luxury BnB Kenya 2026 - International Travel Awards",
-        "Top 10 Airbnbs in Africa 2025 - Travel+Leisure",
-        "Digital Nomad Friendly Certification 2026"
-      ],
       "areaServed": [
-        {
-          "@type": "City",
-          "name": "Nairobi",
-          "sameAs": "https://en.wikipedia.org/wiki/Nairobi"
-        },
-        {
-          "@type": "City",
-          "name": "Mombasa",
-          "sameAs": "https://en.wikipedia.org/wiki/Mombasa"
-        },
-        {
-          "@type": "City",
-          "name": "Kisumu"
-        },
-        {
-          "@type": "City",
-          "name": "Nakuru"
-        },
-        {
-          "@type": "City",
-          "name": "Eldoret"
-        },
-        {
-          "@type": "City",
-          "name": "Malindi"
-        }
+        {"@type": "City", "name": "Nairobi"},
+        {"@type": "City", "name": "Mombasa"},
+        {"@type": "City", "name": "Kisumu"},
+        {"@type": "City", "name": "Nakuru"},
+        {"@type": "City", "name": "Eldoret"},
+        {"@type": "City", "name": "Malindi"}
       ]
     }
     </script>
@@ -148,12 +94,6 @@
           "position": 1,
           "name": "Home",
           "item": "https://kejastays.co.ke/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Nairobi Luxury BnBs",
-          "item": "https://kejastays.co.ke/city.html?city=nairobi"
         }
       ]
     }
@@ -161,73 +101,79 @@
     
     <!-- CSS files -->
     <link rel="stylesheet" href="styles.css">
-    <!-- google fonts -->
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
-    <!-- three.js -->
+    
+    <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-  <!-- Language Selector - FIXED WORKING VERSION -->
-<div class="language-selector" id="languageSelector">
-    <button class="lang-btn" id="langBtn">
-        <span class="lang-icon">🌐</span>
-        <span class="lang-text">Language</span>
-        <span class="lang-arrow">▼</span>
-    </button>
-    <div class="lang-dropdown" id="langDropdown">
-        <a href="#" data-lang="en" class="lang-option active">
-            <span class="flag">🇬🇧</span>
-            <span class="lang-name">English</span>
-        </a>
-        <a href="#" data-lang="fr" class="lang-option">
-            <span class="flag">🇫🇷</span>
-            <span class="lang-name">Français</span>
-        </a>
-        <a href="#" data-lang="es" class="lang-option">
-            <span class="flag">🇪🇸</span>
-            <span class="lang-name">Español</span>
-        </a>
-        <a href="#" data-lang="de" class="lang-option">
-            <span class="flag">🇩🇪</span>
-            <span class="lang-name">Deutsch</span>
-        </a>
-        <a href="#" data-lang="it" class="lang-option">
-            <span class="flag">🇮🇹</span>
-            <span class="lang-name">Italiano</span>
-        </a>
-        <a href="#" data-lang="pt" class="lang-option">
-            <span class="flag">🇵🇹</span>
-            <span class="lang-name">Português</span>
-        </a>
-        <a href="#" data-lang="nl" class="lang-option">
-            <span class="flag">🇳🇱</span>
-            <span class="lang-name">Nederlands</span>
-        </a>
-        <a href="#" data-lang="ru" class="lang-option">
-            <span class="flag">🇷🇺</span>
-            <span class="lang-name">Русский</span>
-        </a>
-        <a href="#" data-lang="ar" class="lang-option">
-            <span class="flag">🇸🇦</span>
-            <span class="lang-name">العربية</span>
-        </a>
-        <a href="#" data-lang="zh" class="lang-option">
-            <span class="flag">🇨🇳</span>
-            <span class="lang-name">中文</span>
-        </a>
-        <a href="#" data-lang="ja" class="lang-option">
-            <span class="flag">🇯🇵</span>
-            <span class="lang-name">日本語</span>
-        </a>
-        <a href="#" data-lang="ko" class="lang-option">
-            <span class="flag">🇰🇷</span>
-            <span class="lang-name">한국어</span>
-        </a>
+    <!-- Language Selector -->
+    <div class="language-selector" id="languageSelector">
+        <button class="lang-btn" id="langBtn" aria-label="Select language">
+            <span class="lang-icon">🌐</span>
+            <span class="lang-text">English</span>
+            <span class="lang-arrow">▼</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+            <a href="#" data-lang="en" class="lang-option active">
+                <span class="flag">🇬🇧</span>
+                <span class="lang-name">English</span>
+            </a>
+            <a href="#" data-lang="fr" class="lang-option">
+                <span class="flag">🇫🇷</span>
+                <span class="lang-name">Français</span>
+            </a>
+            <a href="#" data-lang="es" class="lang-option">
+                <span class="flag">🇪🇸</span>
+                <span class="lang-name">Español</span>
+            </a>
+            <a href="#" data-lang="de" class="lang-option">
+                <span class="flag">🇩🇪</span>
+                <span class="lang-name">Deutsch</span>
+            </a>
+            <a href="#" data-lang="it" class="lang-option">
+                <span class="flag">🇮🇹</span>
+                <span class="lang-name">Italiano</span>
+            </a>
+            <a href="#" data-lang="pt" class="lang-option">
+                <span class="flag">🇵🇹</span>
+                <span class="lang-name">Português</span>
+            </a>
+            <a href="#" data-lang="nl" class="lang-option">
+                <span class="flag">🇳🇱</span>
+                <span class="lang-name">Nederlands</span>
+            </a>
+            <a href="#" data-lang="ru" class="lang-option">
+                <span class="flag">🇷🇺</span>
+                <span class="lang-name">Русский</span>
+            </a>
+            <a href="#" data-lang="ar" class="lang-option">
+                <span class="flag">🇸🇦</span>
+                <span class="lang-name">العربية</span>
+            </a>
+            <a href="#" data-lang="zh" class="lang-option">
+                <span class="flag">🇨🇳</span>
+                <span class="lang-name">中文</span>
+            </a>
+            <a href="#" data-lang="ja" class="lang-option">
+                <span class="flag">🇯🇵</span>
+                <span class="lang-name">日本語</span>
+            </a>
+            <a href="#" data-lang="ko" class="lang-option">
+                <span class="flag">🇰🇷</span>
+                <span class="lang-name">한국어</span>
+            </a>
+        </div>
     </div>
-</div>
-    <!-- 3d background canvas -->
+
+    <!-- Google Translate Widget (hidden) -->
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <!-- 3D Hero Section -->
     <div class="hero-3d-wrap">
         <canvas id="bgCanvas"></canvas>
         <div class="hero-content">
@@ -279,14 +225,14 @@
         </div>
     </div>
 
-    <!-- gallery with city cards - FIXED: each card links to city.html -->
+    <!-- Gallery Section -->
     <section class="gallery-section" id="gallery-section">
         <h2 class="section-title">our award-winning homes across kenya</h2>
         <div class="gallery-grid">
-            <!-- nairobi card - FIXED: added onclick -->
-            <div class="gallery-card" data-city="nairobi" onclick="window.location.href='city.html?city=nairobi'">
+            <!-- Nairobi Card -->
+            <div class="gallery-card" onclick="window.location.href='city.html?city=nairobi'">
                 <div class="card-inner">
-                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop" alt="Luxury living room at The翡翠 Residence Nairobi - Best Airbnb in Kenya" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop" alt="Luxury living room at The翡翠 Residence Nairobi" loading="lazy">
                     <div class="card-caption">
                         <h3>nairobi · kilimani</h3>
                         <span class="property-tag">The翡翠 Residence</span>
@@ -295,10 +241,10 @@
                     </div>
                 </div>
             </div>
-            <!-- mombasa card -->
-            <div class="gallery-card" data-city="mombasa" onclick="window.location.href='city.html?city=mombasa'">
+            <!-- Mombasa Card -->
+            <div class="gallery-card" onclick="window.location.href='city.html?city=mombasa'">
                 <div class="card-inner">
-                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop" alt="Beachfront villa Bahari Villa Mombasa - Top rated Kenya beach Airbnb" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=800&auto=format&fit=crop" alt="Beachfront villa Bahari Villa Mombasa" loading="lazy">
                     <div class="card-caption">
                         <h3>mombasa · nyali</h3>
                         <span class="property-tag">Bahari Villa</span>
@@ -307,10 +253,10 @@
                     </div>
                 </div>
             </div>
-            <!-- kisumu card -->
-            <div class="gallery-card" data-city="kisumu" onclick="window.location.href='city.html?city=kisumu'">
+            <!-- Kisumu Card -->
+            <div class="gallery-card" onclick="window.location.href='city.html?city=kisumu'">
                 <div class="card-inner">
-                    <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&auto=format&fit=crop" alt="Dunga House Kisumu - Lakeside luxury vacation rental Kenya" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?w=800&auto=format&fit=crop" alt="Dunga House Kisumu lakeside luxury" loading="lazy">
                     <div class="card-caption">
                         <h3>kisumu · milimani</h3>
                         <span class="property-tag">Dunga House</span>
@@ -319,10 +265,10 @@
                     </div>
                 </div>
             </div>
-            <!-- nakuru card -->
-            <div class="gallery-card" data-city="nakuru" onclick="window.location.href='city.html?city=nakuru'">
+            <!-- Nakuru Card -->
+            <div class="gallery-card" onclick="window.location.href='city.html?city=nakuru'">
                 <div class="card-inner">
-                    <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&auto=format&fit=crop" alt="The Flamingo Suite Nakuru - Luxury safari accommodation Kenya" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?w=800&auto=format&fit=crop" alt="The Flamingo Suite Nakuru luxury safari accommodation" loading="lazy">
                     <div class="card-caption">
                         <h3>nakuru · section 58</h3>
                         <span class="property-tag">The Flamingo Suite</span>
@@ -331,10 +277,10 @@
                     </div>
                 </div>
             </div>
-            <!-- eldoret card -->
-            <div class="gallery-card" data-city="eldoret" onclick="window.location.href='city.html?city=eldoret'">
+            <!-- Eldoret Card -->
+            <div class="gallery-card" onclick="window.location.href='city.html?city=eldoret'">
                 <div class="card-inner">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop" alt="The Highlands Retreat Eldoret - Luxury highlands vacation rental" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop" alt="The Highlands Retreat Eldoret luxury highlands vacation" loading="lazy">
                     <div class="card-caption">
                         <h3>eldoret · kapsoya</h3>
                         <span class="property-tag">The Highlands Retreat</span>
@@ -343,10 +289,10 @@
                     </div>
                 </div>
             </div>
-            <!-- malindi card -->
-            <div class="gallery-card" data-city="malindi" onclick="window.location.href='city.html?city=malindi'">
+            <!-- Malindi Card -->
+            <div class="gallery-card" onclick="window.location.href='city.html?city=malindi'">
                 <div class="card-inner">
-                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop" alt="Jua Cottage Malindi - Watamu beachfront villa Kenya" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop" alt="Jua Cottage Malindi Watamu beachfront villa" loading="lazy">
                     <div class="card-caption">
                         <h3>malindi · watamu</h3>
                         <span class="property-tag">Jua Cottage</span>
@@ -357,55 +303,56 @@
             </div>
         </div>
     </section>
-   <!-- Add to index.html after gallery section - CORRECTED STRUCTURE -->
-<section class="blog-section">
-    <h2 class="section-title">kenya travel guides</h2>
-    <div class="blog-grid">
-        <!-- Blog Post 1 -->
-        <div class="blog-card" onclick="window.location.href='blog-kenya-guide.html'">
-            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop" alt="Kenya travel guide">
-            <div class="blog-content">
-                <div class="blog-date">February 2026 · 15 min read</div>
-                <h3 class="blog-title">Ultimate Kenya Travel Guide 2026: Where to Stay</h3>
-                <p class="blog-excerpt">Complete guide to Kenya travel. Best neighborhoods, luxury vs budget stays, safari vs beach combinations...</p>
-                <span class="read-more">Read more →</span>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <h2 class="section-title">kenya travel guides</h2>
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <div class="blog-card" onclick="window.location.href='blog-kenya-guide.html'">
+                <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=400&fit=crop" alt="Kenya travel guide" loading="lazy">
+                <div class="blog-content">
+                    <div class="blog-date">February 2026 · 15 min read</div>
+                    <h3 class="blog-title">Ultimate Kenya Travel Guide 2026: Where to Stay</h3>
+                    <p class="blog-excerpt">Complete guide to Kenya travel. Best neighborhoods, luxury vs budget stays, safari vs beach combinations...</p>
+                    <span class="read-more">Read more →</span>
+                </div>
+            </div>
+            
+            <!-- Blog Post 2 -->
+            <div class="blog-card" onclick="window.location.href='blog-nomad-guide.html'">
+                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&h=400&fit=crop" alt="Digital nomad Nairobi" loading="lazy">
+                <div class="blog-content">
+                    <div class="blog-date">February 2026 · 10 min read</div>
+                    <h3 class="blog-title">Digital Nomad Guide to Nairobi: Best BnBs with Fast WiFi</h3>
+                    <p class="blog-excerpt">Best neighborhoods for remote work, WiFi speeds, monthly rentals, and coworking spaces...</p>
+                    <span class="read-more">Read more →</span>
+                </div>
+            </div>
+            
+            <!-- Blog Post 3 -->
+            <div class="blog-card" onclick="window.location.href='blog-safari-beach.html'">
+                <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&h=400&fit=crop" alt="Safari and beach Kenya" loading="lazy">
+                <div class="blog-content">
+                    <div class="blog-date">February 2026 · 12 min read</div>
+                    <h3 class="blog-title">Luxury Safari vs Beach: The Perfect 12-Day Itinerary</h3>
+                    <p class="blog-excerpt">How to combine luxury safari and beach experiences in Kenya with private villas and exclusive game drives...</p>
+                    <span class="read-more">Read more →</span>
+                </div>
+            </div>
+            
+            <!-- Blog Post 4 -->
+            <div class="blog-card" onclick="window.location.href='blog-cost-guide.html'">
+                <img src="https://images.unsplash.com/photo-1578911373434-0cb395d2cbfb?w=600&h=400&fit=crop" alt="Kenya travel costs" loading="lazy">
+                <div class="blog-content">
+                    <div class="blog-date">February 2026 · 8 min read</div>
+                    <h3 class="blog-title">Kenya Travel Cost 2026: Complete Budget Guide</h3>
+                    <p class="blog-excerpt">Detailed Kenya travel costs: accommodation, food, transport, safaris. Plan your perfect budget...</p>
+                    <span class="read-more">Read more →</span>
+                </div>
             </div>
         </div>
-        
-        <!-- Blog Post 2 -->
-        <div class="blog-card" onclick="window.location.href='blog-nomad-guide.html'">
-            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&h=400&fit=crop" alt="Digital nomad Nairobi">
-            <div class="blog-content">
-                <div class="blog-date">February 2026 · 10 min read</div>
-                <h3 class="blog-title">Digital Nomad Guide to Nairobi: Best BnBs with Fast WiFi</h3>
-                <p class="blog-excerpt">Best neighborhoods for remote work, WiFi speeds, monthly rentals, and coworking spaces...</p>
-                <span class="read-more">Read more →</span>
-            </div>
-        </div>
-        
-        <!-- Blog Post 3 -->
-        <div class="blog-card" onclick="window.location.href='blog-safari-beach.html'">
-            <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&h=400&fit=crop" alt="Safari and beach Kenya">
-            <div class="blog-content">
-                <div class="blog-date">February 2026 · 12 min read</div>
-                <h3 class="blog-title">Luxury Safari vs Beach: The Perfect 12-Day Itinerary</h3>
-                <p class="blog-excerpt">How to combine luxury safari and beach experiences in Kenya with private villas and exclusive game drives...</p>
-                <span class="read-more">Read more →</span>
-            </div>
-        </div>
-        
-        <!-- Blog Post 4 -->
-        <div class="blog-card" onclick="window.location.href='blog-cost-guide.html'">
-            <img src="https://images.unsplash.com/photo-1578911373434-0cb395d2cbfb?w=600&h=400&fit=crop" alt="Kenya travel costs">
-            <div class="blog-content">
-                <div class="blog-date">February 2026 · 8 min read</div>
-                <h3 class="blog-title">Kenya Travel Cost 2026: Complete Budget Guide</h3>
-                <p class="blog-excerpt">Detailed Kenya travel costs: accommodation, food, transport, safaris. Plan your perfect budget...</p>
-                <span class="read-more">Read more →</span>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Global Testimonials Section -->
     <section class="testimonials-section">
@@ -429,10 +376,10 @@
         </div>
     </section>
 
-    <!-- floating booking modal -->
+    <!-- Booking Modal -->
     <div class="modal-overlay" id="bookingModal">
         <div class="modal-container">
-            <button class="modal-close" id="closeModal">&times;</button>
+            <button class="modal-close" id="closeModal" aria-label="Close">&times;</button>
             <h2 class="modal-title">book your keja stays experience</h2>
             <form id="bookingForm" class="booking-form" action="https://formspree.io/f/xdaljjwg" method="POST">
                 <div class="form-row">
@@ -465,7 +412,7 @@
         </div>
     </div>
 
-    <!-- footer -->
+    <!-- Footer -->
     <footer class="site-footer">
         <div class="footer-content">
             <p>© <span class="keja-gold">KEJA</span> STAYS · kenya's most awarded luxury bnbs</p>
@@ -473,319 +420,267 @@
         </div>
     </footer>
 
+    <!-- Three.js Script -->
     <script>
-        // three.js subtle 3d grid + floating particles
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bgCanvas'), alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(window.devicePixelRatio);
-
-        // subtle floating particles
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 600;
-        const posArray = new Float32Array(particlesCount * 3);
-        for(let i = 0; i < particlesCount * 3; i += 3) {
-            posArray[i] = (Math.random() - 0.5) * 20;
-            posArray[i+1] = (Math.random() - 0.5) * 20;
-            posArray[i+2] = (Math.random() - 0.5) * 20;
-        }
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-        const particlesMaterial = new THREE.PointsMaterial({ size: 0.03, color: 0xffffff, transparent: true, opacity: 0.5 });
-        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
-        scene.add(particlesMesh);
-
-        // wireframe cubes for depth
-        const cubeGeo = new THREE.BoxGeometry(2, 2, 2);
-        const cubeMat = new THREE.MeshStandardMaterial({ color: 0x3a5f6d, wireframe: true, transparent: true, opacity: 0.2 });
-        const cube = new THREE.Mesh(cubeGeo, cubeMat);
-        scene.add(cube);
-
-        const cube2Geo = new THREE.BoxGeometry(3, 3, 3);
-        const cube2Mat = new THREE.MeshStandardMaterial({ color: 0xbfa37e, wireframe: true, transparent: true, opacity: 0.15 });
-        const cube2 = new THREE.Mesh(cube2Geo, cube2Mat);
-        cube2.position.x = 1.5;
-        cube2.position.y = -0.5;
-        scene.add(cube2);
-
-        const ambientLight = new THREE.AmbientLight(0x404060);
-        scene.add(ambientLight);
-        const pointLight = new THREE.PointLight(0xffffff, 0.8);
-        pointLight.position.set(5, 5, 5);
-        scene.add(pointLight);
-
-        camera.position.z = 6;
-        camera.position.y = 1;
-
-        function animate() {
-            requestAnimationFrame(animate);
-            particlesMesh.rotation.y += 0.0002;
-            particlesMesh.rotation.x += 0.0001;
-            cube.rotation.x += 0.001;
-            cube.rotation.y += 0.002;
-            cube2.rotation.y += 0.001;
-            cube2.rotation.z += 0.001;
-            renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
+        (function() {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bgCanvas'), alpha: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
-        });
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-        // modal logic
-        const modal = document.getElementById('bookingModal');
-        const openBtn = document.getElementById('openBookingBtn');
-        const closeBtn = document.getElementById('closeModal');
-
-        openBtn.addEventListener('click', () => {
-            modal.classList.add('active');
-        });
-
-        closeBtn.addEventListener('click', () => {
-            modal.classList.remove('active');
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.remove('active');
+            // Floating particles
+            const particlesGeometry = new THREE.BufferGeometry();
+            const particlesCount = 400;
+            const posArray = new Float32Array(particlesCount * 3);
+            for(let i = 0; i < particlesCount * 3; i += 3) {
+                posArray[i] = (Math.random() - 0.5) * 25;
+                posArray[i+1] = (Math.random() - 0.5) * 25;
+                posArray[i+2] = (Math.random() - 0.5) * 25;
             }
-        });
-
-        // scroll to gallery when "view rooms" clicked
-        document.getElementById('viewRoomsBtn').addEventListener('click', () => {
-            document.getElementById('gallery-section').scrollIntoView({ behavior: 'smooth' });
-        });
-
-        // form submission with Formspree
-        const form = document.getElementById('bookingForm');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-            
-            const submitBtn = form.querySelector('.submit-btn');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'sending...';
-            submitBtn.disabled = true;
-
-            try {
-                const response = await fetch('https://formspree.io/f/xdaljjwg', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(data)
-                });
-
-                if (response.ok) {
-                    alert(`Thank you ${data.fullName} for choosing KEJA STAYS!\n\nWe've received your booking request for ${data.stayCity}.\n\nOur team will contact you shortly via WhatsApp (${data.whatsapp}) or email.\n\nAsante sana! 🇰🇪`);
-                    
-                    modal.classList.remove('active');
-                    form.reset();
-                } else {
-                    alert('Something went wrong. Please try again.');
-                }
-            } catch (error) {
-                alert('Network error. Please check your connection.');
-            } finally {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-
-        // REMOVED: the old card click handler since we now use inline onclick
-        // The cards already have onclick attributes
-    </script>
-    <!-- Add just before closing </body> tag -->
-<div id="google_translate_element"></div>
-<script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'en',
-    includedLanguages: 'fr,de,es,it',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-}
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script>
-// Language Selector Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const langBtn = document.getElementById('langBtn');
-    const langDropdown = document.getElementById('langDropdown');
-    
-    langBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        langDropdown.classList.toggle('show');
-    });
-    
-    document.addEventListener('click', function() {
-        langDropdown.classList.remove('show');
-    });
-    
-    langDropdown.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-});
-
-// Google Translate Function - COMPLETELY FREE
-function changeLanguage(lang) {
-    // Store selected language
-    localStorage.setItem('selectedLanguage', lang);
-    
-    // Update button text
-    const langNames = {
-        'en': '🇬🇧 English',
-        'fr': '🇫🇷 Français',
-        'es': '🇪🇸 Español',
-        'de': '🇩🇪 Deutsch',
-        'it': '🇮🇹 Italiano',
-        'pt': '🇵🇹 Português',
-        'nl': '🇳🇱 Nederlands',
-        'ru': '🇷🇺 Русский',
-        'ar': '🇸🇦 العربية',
-        'zh': '🇨🇳 中文',
-        'ja': '🇯🇵 日本語',
-        'ko': '🇰🇷 한국어'
-    };
-    
-    document.getElementById('langBtn').innerHTML = `${langNames[lang] || '🌐 English'} ▼`;
-    
-    // Use Google Translate (completely free)
-    if (lang === 'en') {
-        // Reset to original
-        window.location.reload();
-    } else {
-        // Redirect to Google Translate version
-        window.location.href = `https://translate.google.com/translate?hl=${lang}&sl=en&tl=${lang}&u=${window.location.href}`;
-    }
-}
-<script>
-// Language Selector - FIXED WORKING VERSION
-document.addEventListener('DOMContentLoaded', function() {
-    const langBtn = document.getElementById('langBtn');
-    const langDropdown = document.getElementById('langDropdown');
-    const langOptions = document.querySelectorAll('.lang-option');
-    const langText = document.querySelector('.lang-text');
-    
-    // Check if elements exist
-    if (!langBtn || !langDropdown) return;
-    
-    // Toggle dropdown on button click
-    langBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        // Toggle classes
-        this.classList.toggle('active');
-        langDropdown.classList.toggle('show');
-        
-        // Animate dropdown items
-        if (langDropdown.classList.contains('show')) {
-            langOptions.forEach((option, index) => {
-                option.style.setProperty('--item-index', index);
+            particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+            const particlesMaterial = new THREE.PointsMaterial({ 
+                size: 0.02, 
+                color: 0xffffff, 
+                transparent: true, 
+                opacity: 0.4 
             });
-        }
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
-            langBtn.classList.remove('active');
-            langDropdown.classList.remove('show');
-        }
-    });
-    
-    // Prevent dropdown from closing when clicking inside it
-    langDropdown.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-    
-    // Handle language selection
-    langOptions.forEach(option => {
-        option.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const selectedLang = this.getAttribute('data-lang');
-            const selectedFlag = this.querySelector('.flag').textContent;
-            const selectedName = this.querySelector('.lang-name').textContent;
-            
-            // Update button text
-            langText.textContent = selectedName;
-            
-            // Update active state
-            langOptions.forEach(opt => opt.classList.remove('active'));
-            this.classList.add('active');
-            
-            // Close dropdown
-            langBtn.classList.remove('active');
-            langDropdown.classList.remove('show');
-            
-            // Save preference
-            localStorage.setItem('preferredLanguage', selectedLang);
-            
-            // Trigger translation
-            translatePage(selectedLang);
-        });
-    });
-    
-    // Check for saved language preference
-    const savedLang = localStorage.getItem('preferredLanguage');
-    if (savedLang && savedLang !== 'en') {
-        // Find and activate the saved language option
-        const savedOption = document.querySelector(`.lang-option[data-lang="${savedLang}"]`);
-        if (savedOption) {
-            const flag = savedOption.querySelector('.flag').textContent;
-            const name = savedOption.querySelector('.lang-name').textContent;
-            langText.textContent = name;
-            savedOption.classList.add('active');
-            
-            // Ask user if they want to translate (only once per session)
-            if (!sessionStorage.getItem('translationPromptShown')) {
-                setTimeout(() => {
-                    if (confirm(`🌐 Would you like to view this page in ${name}?`)) {
-                        translatePage(savedLang);
-                    }
-                }, 1500);
-                sessionStorage.setItem('translationPromptShown', 'true');
+            const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+            scene.add(particlesMesh);
+
+            // Wireframe cubes
+            const cubeGeo = new THREE.BoxGeometry(2, 2, 2);
+            const cubeMat = new THREE.MeshStandardMaterial({ 
+                color: 0x3a5f6d, 
+                wireframe: true, 
+                transparent: true, 
+                opacity: 0.15 
+            });
+            const cube = new THREE.Mesh(cubeGeo, cubeMat);
+            scene.add(cube);
+
+            const cube2Geo = new THREE.BoxGeometry(3.5, 3.5, 3.5);
+            const cube2Mat = new THREE.MeshStandardMaterial({ 
+                color: 0xbfa37e, 
+                wireframe: true, 
+                transparent: true, 
+                opacity: 0.1 
+            });
+            const cube2 = new THREE.Mesh(cube2Geo, cube2Mat);
+            cube2.position.set(1.5, -0.5, -1);
+            scene.add(cube2);
+
+            const ambientLight = new THREE.AmbientLight(0x404060);
+            scene.add(ambientLight);
+            const pointLight = new THREE.PointLight(0xffffff, 1);
+            pointLight.position.set(5, 5, 5);
+            scene.add(pointLight);
+
+            camera.position.set(0, 1, 8);
+
+            function animate() {
+                requestAnimationFrame(animate);
+                particlesMesh.rotation.y += 0.0001;
+                particlesMesh.rotation.x += 0.00005;
+                cube.rotation.x += 0.0005;
+                cube.rotation.y += 0.001;
+                cube2.rotation.y += 0.0005;
+                cube2.rotation.z += 0.0005;
+                renderer.render(scene, camera);
             }
-        }
-    }
-});
+            animate();
 
-// Translation function using Google Translate
-function translatePage(targetLang) {
-    if (targetLang === 'en') {
-        // Reset to original language
-        window.location.reload();
-        return;
-    }
-    
-    // Get current page URL
-    const currentUrl = window.location.href.split('#')[0].split('?')[0];
-    
-    // Create Google Translate URL
-    const translateUrl = `https://translate.google.com/translate?hl=${targetLang}&sl=en&tl=${targetLang}&u=${encodeURIComponent(currentUrl)}&sandbox=1`;
-    
-    // Open in new tab (avoids navigation issues)
-    window.open(translateUrl, '_blank');
-}
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        })();
+    </script>
 
-// Optional: Add keyboard support (Escape key to close dropdown)
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        const langBtn = document.getElementById('langBtn');
-        const langDropdown = document.getElementById('langDropdown');
-        if (langBtn && langDropdown.classList.contains('show')) {
-            langBtn.classList.remove('active');
-            langDropdown.classList.remove('show');
+    <!-- Booking Modal Script -->
+    <script>
+        (function() {
+            const modal = document.getElementById('bookingModal');
+            const openBtn = document.getElementById('openBookingBtn');
+            const closeBtn = document.getElementById('closeModal');
+
+            if (openBtn) {
+                openBtn.addEventListener('click', () => {
+                    modal.classList.add('active');
+                });
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener('click', () => {
+                    modal.classList.remove('active');
+                });
+            }
+
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                }
+            });
+
+            // Scroll to gallery
+            const viewRoomsBtn = document.getElementById('viewRoomsBtn');
+            if (viewRoomsBtn) {
+                viewRoomsBtn.addEventListener('click', () => {
+                    document.getElementById('gallery-section').scrollIntoView({ 
+                        behavior: 'smooth' 
+                    });
+                });
+            }
+
+            // Form submission
+            const form = document.getElementById('bookingForm');
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    const formData = new FormData(form);
+                    const data = Object.fromEntries(formData.entries());
+                    
+                    const submitBtn = form.querySelector('.submit-btn');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'sending...';
+                    submitBtn.disabled = true;
+
+                    try {
+                        const response = await fetch('https://formspree.io/f/xdaljjwg', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(data)
+                        });
+
+                        if (response.ok) {
+                            alert(`Thank you ${data.fullName} for choosing KEJA STAYS!\n\nWe've received your booking request for ${data.stayCity}.\n\nOur team will contact you shortly via WhatsApp (${data.whatsapp}) or email.\n\nAsante sana! 🇰🇪`);
+                            modal.classList.remove('active');
+                            form.reset();
+                        } else {
+                            alert('Something went wrong. Please try again.');
+                        }
+                    } catch (error) {
+                        alert('Network error. Please check your connection.');
+                    } finally {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
+        })();
+    </script>
+
+    <!-- Language Selector JavaScript -->
+    <script type="text/javascript">
+        // Google Translate Initialization
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,fr,es,de,it,pt,nl,ru,ar,zh-CN,ja,ko',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
         }
-    }
-});
-</script>
+
+        // Language mapping
+        const langMap = {
+            'en': 'en', 'fr': 'fr', 'es': 'es', 'de': 'de', 'it': 'it',
+            'pt': 'pt', 'nl': 'nl', 'ru': 'ru', 'ar': 'ar', 'zh': 'zh-CN',
+            'ja': 'ja', 'ko': 'ko'
+        };
+
+        const langNames = {
+            'en': 'English', 'fr': 'Français', 'es': 'Español', 'de': 'Deutsch',
+            'it': 'Italiano', 'pt': 'Português', 'nl': 'Nederlands', 'ru': 'Русский',
+            'ar': 'العربية', 'zh': '中文', 'ja': '日本語', 'ko': '한국어'
+        };
+
+        function triggerTranslate(lang) {
+            if (lang === 'en') {
+                location.reload();
+                return;
+            }
+            
+            document.cookie = `googtrans=/en/${langMap[lang]}`;
+            document.cookie = `googtrans=/en/${langMap[lang]}; path=/`;
+            
+            showNotification(`Translating to ${langNames[lang]}...`);
+            
+            setTimeout(() => location.reload(), 500);
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'translation-notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => notification.classList.add('show'), 100);
+            setTimeout(() => {
+                notification.classList.remove('show');
+                setTimeout(() => notification.remove(), 300);
+            }, 2000);
+        }
+
+        // Language selector functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const langBtn = document.getElementById('langBtn');
+            const langDropdown = document.getElementById('langDropdown');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const langText = document.querySelector('.lang-text');
+            
+            if (!langBtn || !langDropdown) return;
+            
+            langBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.classList.toggle('active');
+                langDropdown.classList.toggle('show');
+            });
+            
+            document.addEventListener('click', function(e) {
+                if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                    langBtn.classList.remove('active');
+                    langDropdown.classList.remove('show');
+                }
+            });
+            
+            langDropdown.addEventListener('click', (e) => e.stopPropagation());
+            
+            langOptions.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const selectedLang = this.getAttribute('data-lang');
+                    const selectedName = this.querySelector('.lang-name').textContent;
+                    
+                    langText.textContent = selectedName;
+                    
+                    langOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    langBtn.classList.remove('active');
+                    langDropdown.classList.remove('show');
+                    
+                    localStorage.setItem('preferredLanguage', selectedLang);
+                    triggerTranslate(selectedLang);
+                });
+            });
+            
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang && savedLang !== 'en') {
+                const savedOption = document.querySelector(`.lang-option[data-lang="${savedLang}"]`);
+                if (savedOption) {
+                    langText.textContent = savedOption.querySelector('.lang-name').textContent;
+                    savedOption.classList.add('active');
+                }
+            }
+        });
+    </script>
+
+    <!-- Load Google Translate -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 </body>
 </html>

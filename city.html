@@ -102,6 +102,68 @@
     </style>
 </head>
 <body>
+    <!-- Language Selector - WORKING VERSION -->
+    <div class="language-selector" id="languageSelector">
+        <button class="lang-btn" id="langBtn">
+            <span class="lang-icon">🌐</span>
+            <span class="lang-text">English</span>
+            <span class="lang-arrow">▼</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+            <a href="#" data-lang="en" class="lang-option active">
+                <span class="flag">🇬🇧</span>
+                <span class="lang-name">English</span>
+            </a>
+            <a href="#" data-lang="fr" class="lang-option">
+                <span class="flag">🇫🇷</span>
+                <span class="lang-name">Français</span>
+            </a>
+            <a href="#" data-lang="es" class="lang-option">
+                <span class="flag">🇪🇸</span>
+                <span class="lang-name">Español</span>
+            </a>
+            <a href="#" data-lang="de" class="lang-option">
+                <span class="flag">🇩🇪</span>
+                <span class="lang-name">Deutsch</span>
+            </a>
+            <a href="#" data-lang="it" class="lang-option">
+                <span class="flag">🇮🇹</span>
+                <span class="lang-name">Italiano</span>
+            </a>
+            <a href="#" data-lang="pt" class="lang-option">
+                <span class="flag">🇵🇹</span>
+                <span class="lang-name">Português</span>
+            </a>
+            <a href="#" data-lang="nl" class="lang-option">
+                <span class="flag">🇳🇱</span>
+                <span class="lang-name">Nederlands</span>
+            </a>
+            <a href="#" data-lang="ru" class="lang-option">
+                <span class="flag">🇷🇺</span>
+                <span class="lang-name">Русский</span>
+            </a>
+            <a href="#" data-lang="ar" class="lang-option">
+                <span class="flag">🇸🇦</span>
+                <span class="lang-name">العربية</span>
+            </a>
+            <a href="#" data-lang="zh" class="lang-option">
+                <span class="flag">🇨🇳</span>
+                <span class="lang-name">中文</span>
+            </a>
+            <a href="#" data-lang="ja" class="lang-option">
+                <span class="flag">🇯🇵</span>
+                <span class="lang-name">日本語</span>
+            </a>
+            <a href="#" data-lang="ko" class="lang-option">
+                <span class="flag">🇰🇷</span>
+                <span class="lang-name">한국어</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Google Translate Widget (hidden but functional) -->
+    <div id="google_translate_element" style="display: none;"></div>
+
     <div class="city-hero">
         <a href="index.html" class="back-button">← back to all homes</a>
         <h1><span id="cityName">Nairobi</span> · <span id="propertyTag">luxury collection</span></h1>
@@ -166,7 +228,7 @@
         // format city name for display
         const cityDisplay = city.charAt(0).toUpperCase() + city.slice(1);
         document.getElementById('cityName').textContent = cityDisplay;
-        document.getElementById('stayCityCity').value = cityDisplay; // prefill in form
+        document.getElementById('stayCityCity').value = cityDisplay;
 
         // UNIQUE PHOTO DATABASE for each city
         const cityPhotos = {
@@ -238,11 +300,9 @@
             }
         };
 
-        // use selected city or default to nairobi
         const cityData = cityPhotos[city] || cityPhotos.nairobi;
         document.getElementById('propertyTag').textContent = cityData.tag;
 
-        // populate photo grid
         const grid = document.getElementById('photoGrid');
         cityData.photos.forEach(photo => {
             const item = document.createElement('div');
@@ -284,7 +344,6 @@
             submitBtn.disabled = true;
 
             try {
-                // Send to Formspree
                 const response = await fetch('https://formspree.io/f/xdaljjwg', {
                     method: 'POST',
                     headers: {
@@ -309,5 +368,135 @@
             }
         });
     </script>
+
+    <!-- Language Selector JavaScript -->
+    <script type="text/javascript">
+    // Google Translate Initialization
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: 'en,fr,es,de,it,pt,nl,ru,ar,zh-CN,ja,ko',
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+
+    // Language mapping
+    const langMap = {
+        'en': 'en',
+        'fr': 'fr',
+        'es': 'es',
+        'de': 'de',
+        'it': 'it',
+        'pt': 'pt',
+        'nl': 'nl',
+        'ru': 'ru',
+        'ar': 'ar',
+        'zh': 'zh-CN',
+        'ja': 'ja',
+        'ko': 'ko'
+    };
+
+    const langNames = {
+        'en': 'English', 'fr': 'Français', 'es': 'Español', 'de': 'Deutsch',
+        'it': 'Italiano', 'pt': 'Português', 'nl': 'Nederlands', 'ru': 'Русский',
+        'ar': 'العربية', 'zh': '中文', 'ja': '日本語', 'ko': '한국어'
+    };
+
+    function triggerTranslate(lang) {
+        if (lang === 'en') {
+            location.reload();
+            return;
+        }
+        
+        document.cookie = `googtrans=/en/${langMap[lang]}`;
+        document.cookie = `googtrans=/en/${langMap[lang]}; path=/`;
+        
+        showNotification(`Translating to ${langNames[lang]}...`);
+        
+        setTimeout(() => {
+            location.reload();
+        }, 500);
+    }
+
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'translation-notification';
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.classList.add('show');
+        }, 100);
+        
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        }, 2000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const langBtn = document.getElementById('langBtn');
+        const langDropdown = document.getElementById('langDropdown');
+        const langOptions = document.querySelectorAll('.lang-option');
+        const langText = document.querySelector('.lang-text');
+        
+        if (!langBtn || !langDropdown) return;
+        
+        langBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            this.classList.toggle('active');
+            langDropdown.classList.toggle('show');
+        });
+        
+        document.addEventListener('click', function(e) {
+            if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                langBtn.classList.remove('active');
+                langDropdown.classList.remove('show');
+            }
+        });
+        
+        langDropdown.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        langOptions.forEach(option => {
+            option.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const selectedLang = this.getAttribute('data-lang');
+                const selectedName = this.querySelector('.lang-name').textContent;
+                
+                langText.textContent = selectedName;
+                
+                langOptions.forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                
+                langBtn.classList.remove('active');
+                langDropdown.classList.remove('show');
+                
+                localStorage.setItem('preferredLanguage', selectedLang);
+                
+                triggerTranslate(selectedLang);
+            });
+        });
+        
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang && savedLang !== 'en') {
+            const savedOption = document.querySelector(`.lang-option[data-lang="${savedLang}"]`);
+            if (savedOption) {
+                const name = savedOption.querySelector('.lang-name').textContent;
+                langText.textContent = name;
+                savedOption.classList.add('active');
+            }
+        }
+    });
+    </script>
+
+    <!-- Load Google Translate -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

@@ -12,24 +12,183 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
     
     <style>
-        /* Copy the same styles from above */
-        .blog-post-container { max-width: 900px; margin: 4rem auto; padding: 2rem; background: rgba(255, 255, 255, 0.02); border-radius: 32px; border: 1px solid rgba(212, 182, 138, 0.1); }
-        .blog-post-header { margin-bottom: 3rem; text-align: center; }
-        .blog-post-header h1 { font-size: 2.8rem; color: #ffffff; margin-bottom: 1rem; line-height: 1.2; }
-        .blog-post-meta { color: #d4b68a; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; }
-        .blog-post-image { width: 100%; height: 500px; object-fit: cover; border-radius: 24px; margin: 2rem 0 3rem; border: 1px solid rgba(212, 182, 138, 0.2); }
-        .blog-post-content h2 { color: #d4b68a; font-size: 2rem; margin: 3rem 0 1.5rem; font-weight: 400; }
-        .blog-post-content h3 { color: #ffffff; font-size: 1.5rem; margin: 2rem 0 1rem; font-weight: 500; }
-        .blog-post-content p { color: #e2e8f0; line-height: 1.8; margin-bottom: 1.5rem; font-size: 1.1rem; }
-        .blog-post-content ul, .blog-post-content ol { color: #e2e8f0; margin: 1.5rem 0; padding-left: 2rem; }
-        .blog-post-content li { margin-bottom: 0.8rem; line-height: 1.7; }
-        .cta-box { background: linear-gradient(135deg, rgba(212, 182, 138, 0.1) 0%, rgba(212, 182, 138, 0.05) 100%); border: 1px solid rgba(212, 182, 138, 0.3); border-radius: 24px; padding: 3rem; text-align: center; margin: 4rem 0 2rem; }
-        .cta-box h3 { color: #d4b68a; font-size: 1.8rem; margin-bottom: 1rem; }
-        .back-to-blog { display: inline-block; margin: 2rem 0; color: #d4b68a; text-decoration: none; font-weight: 500; border-bottom: 1px dotted #d4b68a; }
-        @media (max-width: 768px) { .blog-post-container { padding: 1.5rem; margin: 2rem 1rem; } .blog-post-header h1 { font-size: 2rem; } .blog-post-image { height: 300px; } }
+        /* Copy all the same styles from blog-safari-beach.html */
+        .blog-post-container {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 32px;
+            border: 1px solid rgba(212, 182, 138, 0.1);
+        }
+        
+        .blog-post-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .blog-post-header h1 {
+            font-size: 2.8rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .blog-post-meta {
+            color: #d4b68a;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .blog-post-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 24px;
+            margin: 2rem 0 3rem;
+            border: 1px solid rgba(212, 182, 138, 0.2);
+        }
+        
+        .blog-post-content h2 {
+            color: #d4b68a;
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+            font-weight: 400;
+        }
+        
+        .blog-post-content h3 {
+            color: #ffffff;
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            font-weight: 500;
+        }
+        
+        .blog-post-content p {
+            color: #e2e8f0;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .blog-post-content ul, 
+        .blog-post-content ol {
+            color: #e2e8f0;
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        .blog-post-content li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+        
+        .blog-post-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .blog-post-content th {
+            background: rgba(212, 182, 138, 0.1);
+            color: #d4b68a;
+            font-weight: 500;
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(212, 182, 138, 0.3);
+        }
+        
+        .blog-post-content td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: #e2e8f0;
+        }
+        
+        .blog-post-content tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, rgba(212, 182, 138, 0.1) 0%, rgba(212, 182, 138, 0.05) 100%);
+            border: 1px solid rgba(212, 182, 138, 0.3);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0 2rem;
+        }
+        
+        .cta-box h3 {
+            color: #d4b68a;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box p {
+            color: #e2e8f0;
+            margin-bottom: 2rem;
+        }
+        
+        .cta-box .cta-button {
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .back-to-blog {
+            display: inline-block;
+            margin: 2rem 0;
+            color: #d4b68a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dotted #d4b68a;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-post-container {
+                padding: 1.5rem;
+                margin: 2rem 1rem;
+            }
+            
+            .blog-post-header h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-post-image {
+                height: 300px;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Language Selector (same as above) -->
+    <div class="language-selector" id="languageSelector">
+        <button class="lang-btn" id="langBtn">
+            <span class="lang-icon">🌐</span>
+            <span class="lang-text">English</span>
+            <span class="lang-arrow">▼</span>
+        </button>
+        <div class="lang-dropdown" id="langDropdown">
+            <a href="#" data-lang="en" class="lang-option active"><span class="flag">🇬🇧</span><span class="lang-name">English</span></a>
+            <a href="#" data-lang="fr" class="lang-option"><span class="flag">🇫🇷</span><span class="lang-name">Français</span></a>
+            <a href="#" data-lang="es" class="lang-option"><span class="flag">🇪🇸</span><span class="lang-name">Español</span></a>
+            <a href="#" data-lang="de" class="lang-option"><span class="flag">🇩🇪</span><span class="lang-name">Deutsch</span></a>
+            <a href="#" data-lang="it" class="lang-option"><span class="flag">🇮🇹</span><span class="lang-name">Italiano</span></a>
+            <a href="#" data-lang="pt" class="lang-option"><span class="flag">🇵🇹</span><span class="lang-name">Português</span></a>
+            <a href="#" data-lang="nl" class="lang-option"><span class="flag">🇳🇱</span><span class="lang-name">Nederlands</span></a>
+            <a href="#" data-lang="ru" class="lang-option"><span class="flag">🇷🇺</span><span class="lang-name">Русский</span></a>
+            <a href="#" data-lang="ar" class="lang-option"><span class="flag">🇸🇦</span><span class="lang-name">العربية</span></a>
+            <a href="#" data-lang="zh" class="lang-option"><span class="flag">🇨🇳</span><span class="lang-name">中文</span></a>
+            <a href="#" data-lang="ja" class="lang-option"><span class="flag">🇯🇵</span><span class="lang-name">日本語</span></a>
+            <a href="#" data-lang="ko" class="lang-option"><span class="flag">🇰🇷</span><span class="lang-name">한국어</span></a>
+        </div>
+    </div>
+
+    <!-- Google Translate Widget (hidden) -->
+    <div id="google_translate_element" style="display: none;"></div>
+
+    <!-- Navigation -->
     <div style="padding: 2rem; text-align: center;">
         <a href="index.html" class="back-to-blog">← Back to KEJA STAYS</a>
     </div>
@@ -41,7 +200,7 @@
                 <h1>Kenya Travel Cost 2026: Complete Budget Guide</h1>
             </div>
             
-            <img src="https://images.unsplash.com/photo-1578911373434-0cb395d2cbfb?w=1200&auto=format&fit=crop" alt="Kenya travel budget" class="blog-post-image">
+            <img src="https://images.unsplash.com/photo-1578911373434-0cb395d2cbfb?w=1200&auto=format&fit=crop" alt="Kenya travel budget planning" class="blog-post-image">
             
             <p>Planning a trip to Kenya? Understanding costs is crucial for budgeting. Based on real traveler data, here's everything you need to know about Kenya travel expenses in 2026.</p>
             
@@ -52,39 +211,39 @@
                 <li><strong>Luxury traveler:</strong> $300+/day (KES38,789) - private villas, gourmet dining, private safaris</li>
             </ul>
             
-            <h2>Accommodation Costs</h2>
-            <p>Prices vary by season and location:</p>
-            <table style="width:100%; border-collapse: collapse; margin: 2rem 0;">
-                <tr style="border-bottom: 1px solid rgba(212, 182, 138, 0.3);">
-                    <th style="padding: 1rem; text-align: left; color: #d4b68a;">Type</th>
-                    <th style="padding: 1rem; text-align: left; color: #d4b68a;">Low Season</th>
-                    <th style="padding: 1rem; text-align: left; color: #d4b68a;">Peak Season</th>
-                </tr>
-                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                    <td style="padding: 1rem;">Budget hotel/hostel</td>
-                    <td style="padding: 1rem;">$14-25</td>
-                    <td style="padding: 1rem;">$25-40</td>
-                </tr>
-                <tr style="border-bottom: 1px solid rgba(255,255,255,0.1);">
-                    <td style="padding: 1rem;">Mid-range Airbnb</td>
-                    <td style="padding: 1rem;">$33-50</td>
-                    <td style="padding: 1rem;">$50-80</td>
+            <h2>Accommodation Costs by Season</h2>
+            <p>Prices vary significantly between low and peak seasons:</p>
+            <table>
+                <tr>
+                    <th>Type</th>
+                    <th>Low Season</th>
+                    <th>Peak Season</th>
                 </tr>
                 <tr>
-                    <td style="padding: 1rem;">Luxury villa</td>
-                    <td style="padding: 1rem;">$68-150</td>
-                    <td style="padding: 1rem;">$150-300+</td>
+                    <td>Budget hotel/hostel</td>
+                    <td>$14-25</td>
+                    <td>$25-40</td>
+                </tr>
+                <tr>
+                    <td>Mid-range Airbnb</td>
+                    <td>$33-50</td>
+                    <td>$50-80</td>
+                </tr>
+                <tr>
+                    <td>Luxury villa</td>
+                    <td>$68-150</td>
+                    <td>$150-300+</td>
                 </tr>
             </table>
             
             <h2>KEJA STAYS Properties: Value for Money</h2>
             <ul>
-                <li><strong>The翡翠 Residence (Nairobi):</strong> $89-199/night (Starlink WiFi, 24/7 security)</li>
-                <li><strong>Bahari Villa (Mombasa):</strong> $99-249/night (oceanfront, private pool)</li>
-                <li><strong>The Flamingo Suite (Nakuru):</strong> $79-179/night (safari base, spa bathroom)</li>
-                <li><strong>Dunga House (Kisumu):</strong> $69-149/night (lake views, peaceful)</li>
-                <li><strong>The Highlands Retreat (Eldoret):</strong> $79-159/night (mountain views, fireplaces)</li>
-                <li><strong>Jua Cottage (Malindi):</strong> $89-199/night (beachfront, tropical garden)</li>
+                <li><strong>The翡翠 Residence (Nairobi):</strong> $89-199/night - Starlink WiFi, 24/7 security</li>
+                <li><strong>Bahari Villa (Mombasa):</strong> $99-249/night - oceanfront, private pool</li>
+                <li><strong>The Flamingo Suite (Nakuru):</strong> $79-179/night - safari base, spa bathroom</li>
+                <li><strong>Dunga House (Kisumu):</strong> $69-149/night - lake views, peaceful</li>
+                <li><strong>The Highlands Retreat (Eldoret):</strong> $79-159/night - mountain views</li>
+                <li><strong>Jua Cottage (Malindi):</strong> $89-199/night - beachfront, tropical garden</li>
             </ul>
             
             <h2>Food & Dining Budget</h2>
@@ -119,14 +278,14 @@
                 <li><strong>Travel in shoulder season (Jan-Mar):</strong> Save 20-40% on accommodation</li>
                 <li><strong>Book monthly stays:</strong> Save 15-40% with KEJA STAYS</li>
                 <li><strong>Use Uber from airport:</strong> 30% cheaper than airport taxis</li>
-                <li><strong>Eat at local korogas:</strong> Great food for under $5</li>
+                <li><strong>Eat at local restaurants:</strong> Great food for under $5</li>
                 <li><strong>Book activities directly:</strong> Save 20% vs hotel bookings</li>
             </ul>
             
             <div class="cta-box">
                 <h3>Calculate Your Kenya Budget</h3>
-                <p>Use our costs to plan your perfect Kenya trip within your budget.</p>
-                <a href="index.html" class="cta-button" style="text-decoration: none; display: inline-block;">Browse Properties</a>
+                <p>Use our cost guide to plan your perfect Kenya trip within your budget. Contact us for personalized recommendations.</p>
+                <a href="index.html" class="cta-button">Browse KEJA STAYS Properties</a>
             </div>
         </article>
     </div>
@@ -136,5 +295,69 @@
             <p>© <span class="keja-gold">KEJA</span> STAYS · kenya's most awarded luxury bnbs</p>
         </div>
     </footer>
+
+    <!-- Language Selector JavaScript (same as above) -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,fr,es,de,it,pt,nl,ru,ar,zh-CN,ja,ko',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        const langMap = {
+            'en': 'en', 'fr': 'fr', 'es': 'es', 'de': 'de', 'it': 'it',
+            'pt': 'pt', 'nl': 'nl', 'ru': 'ru', 'ar': 'ar', 'zh': 'zh-CN',
+            'ja': 'ja', 'ko': 'ko'
+        };
+
+        function triggerTranslate(lang) {
+            if (lang === 'en') { location.reload(); return; }
+            document.cookie = `googtrans=/en/${langMap[lang]}`;
+            document.cookie = `googtrans=/en/${langMap[lang]}; path=/`;
+            setTimeout(() => location.reload(), 500);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const langBtn = document.getElementById('langBtn');
+            const langDropdown = document.getElementById('langDropdown');
+            const langOptions = document.querySelectorAll('.lang-option');
+            const langText = document.querySelector('.lang-text');
+            
+            if (!langBtn || !langDropdown) return;
+            
+            langBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                this.classList.toggle('active');
+                langDropdown.classList.toggle('show');
+            });
+            
+            document.addEventListener('click', function(e) {
+                if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+                    langBtn.classList.remove('active');
+                    langDropdown.classList.remove('show');
+                }
+            });
+            
+            langOptions.forEach(option => {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const selectedLang = this.getAttribute('data-lang');
+                    const selectedName = this.querySelector('.lang-name').textContent;
+                    langText.textContent = selectedName;
+                    langOptions.forEach(opt => opt.classList.remove('active'));
+                    this.classList.add('active');
+                    langBtn.classList.remove('active');
+                    langDropdown.classList.remove('show');
+                    localStorage.setItem('preferredLanguage', selectedLang);
+                    triggerTranslate(selectedLang);
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" defer></script>
 </body>
 </html>
